@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import AdminRouter from "./AdminRouter"
 
 
 const MainRouter = () => {
@@ -6,7 +7,7 @@ const MainRouter = () => {
     <div>
       <BrowserRouter>
       <Routes>
-        <Route />
+        <Route path="/admin/*" element={<AdminRouter/>} />
       </Routes>
       </BrowserRouter>
     </div>
