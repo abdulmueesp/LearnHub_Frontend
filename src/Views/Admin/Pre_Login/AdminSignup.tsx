@@ -1,6 +1,7 @@
 import { Field, Form, Formik } from "formik"
 import Manstudy from "../../../assets/manstudy.jpg"
 import { adminSignupvalidation } from "../../../Validations/Adminsignupval"
+import axiosInstance from "../../../interceptors/axiosconfig"
 const AdminSignup = () => {
 
    const initailvalues={
@@ -9,8 +10,9 @@ const AdminSignup = () => {
     password:""
    }
 
-   const handlesubmit =(values:any)=>{
-    console.log(values);
+   const handlesubmit =async(values:any)=>{
+       console.log("frontend");
+        const response=await axiosInstance.post("/admin/signup",values)
     
    }
 
