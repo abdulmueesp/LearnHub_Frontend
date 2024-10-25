@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react'
 import Navbar from './Navbar'
-import Sidebar from './Sidebar'
+import Sidebar from './Sidebar/Sidebar'
 
 const Layout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
   return (

@@ -2,9 +2,9 @@ import pfphoto from "../../assets/pfphoto.jpg"
 
 const Navbar = () => {
   return (
-    <div className="w-full h-[55px] border-y  flex justify-between pr-[50px]" >
+    <div className="w-full h-[55px] border-y  flex justify-between pr-[5px] md:pr-[50px]" >
         {/* name  */}
-      <div className="w-[270px] h-[55px] bg-white flex flex-col items-center justify-center ">
+      <div className="w-[270px] h-[55px] lg:bg-white flex flex-col items-center justify-center ">
       <h2 className="font-bold text-xl " style={{ color: "hsl(217.24deg 32.58% 17.45%)" }}>Admin Panel</h2>
       </div>
       {/* img  */}
