@@ -3,21 +3,29 @@ import Manstudy from "../../../assets/manstudy.jpg"
 import { adminSignupvalidation } from "../../../Validations/Adminsignupval"
 import { createadmin} from "../../../redux/pages/Adminslice";
 import { useAppDispatch } from "../../../redux/hooks";
-import { useNavigate } from "react-router-dom";
+
 const AdminSignup = () => {
   const dispatch=useAppDispatch();
-   const navigate=useNavigate();
-   const initailvalues={
+
+   interface signupvalues{
+    name:string;
+    email:string;
+    password:string;
+   }
+         
+   const initailvalues:signupvalues={
     name:"",
     email:"",
     password:""
    }
+
 
    const handlesubmit =async(values:any,{ resetForm }:FormikHelpers<any>)=>{
      dispatch(createadmin(values))
       resetForm()
    }
 
+   
   return (
     <div className="w-full h-[710px] bg-gray-100 flex justify-center items-center ">
        <div className="w-[800px] h-[450px] bg-white flex border rounded-lg shadow-custom-outer1">
