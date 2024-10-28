@@ -1,19 +1,21 @@
-import { Field, Form, Formik } from "formik"
+import { Field, Form, Formik, FormikHelpers } from "formik"
 import Manstudy from "../../../assets/manstudy.jpg"
 import { adminSignupvalidation } from "../../../Validations/Adminsignupval"
-import axiosInstance from "../../../interceptors/axiosconfig"
+import { createadmin} from "../../../redux/pages/Adminslice";
+import { useAppDispatch } from "../../../redux/hooks";
+import { useNavigate } from "react-router-dom";
 const AdminSignup = () => {
-
+  const dispatch=useAppDispatch();
+   const navigate=useNavigate();
    const initailvalues={
     name:"",
     email:"",
     password:""
    }
 
-   const handlesubmit =async(values:any)=>{
-       console.log("frontend");
-        const response=await axiosInstance.post("/admin/signup",values)
-    
+   const handlesubmit =async(values:any,{ resetForm }:FormikHelpers<any>)=>{
+     dispatch(createadmin(values))
+      resetForm()
    }
 
   return (
