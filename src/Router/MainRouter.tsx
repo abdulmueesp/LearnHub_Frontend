@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import AdminRouter from "./AdminRouter"
+import AdminRouter from "./Adminrouter/AdminRouter"
 
 
 const MainRouter = () => {

@@ -3,6 +3,7 @@ import Manstudy from "../../../assets/manstudy.jpg"
 import { adminSignupvalidation } from "../../../Validations/Adminsignupval"
 import { createadmin} from "../../../redux/pages/Adminslice";
 import { useAppDispatch } from "../../../redux/hooks";
+import { Link } from "react-router-dom";
 
 const AdminSignup = () => {
   const dispatch=useAppDispatch();
@@ -61,7 +62,7 @@ const AdminSignup = () => {
              )} 
             </Formik>
             <div className="w-[500px] h-[40px]  mt-[35px] flex justify-center items-center">
-                <h2>Already have an account? <span className="text-yellow-900 underline underline-offset-2">Sign in</span></h2>
+                <h2>Already have an account? <span className="text-yellow-900 underline underline-offset-2"><Link to={"/admin/adminlogin"}>Sign in</Link></span></h2>
             </div>
           </div>
           {/* img section  */}

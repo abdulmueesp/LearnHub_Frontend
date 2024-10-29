@@ -2,8 +2,14 @@
 import { Field, Form, Formik } from "formik"
 import Manstudy from "../../../assets/manstudy.jpg"
 import { Adminloginvalidation } from "../../../Validations/Adminsignupval";
+import { Link, Navigate, useNavigate,} from "react-router-dom";
+import { Login } from "../../../redux/pages/Adminslice";
+import { useAppDispatch, useAppselector } from "../../../redux/hooks";
 const Adminlogin = () => {
 
+    const dispatch=useAppDispatch();
+    const navigate=useNavigate();
+     
   interface AdminLoginValues {
     email: string;
     password: string;
@@ -13,9 +19,9 @@ const Adminlogin = () => {
     email:"",
     password:"",
   }
-     const handlesubmit=(values:any)=>{
-          console.log(values);
-          
+     const handlesubmit=async (values:any)=>{
+       dispatch(Login((values)))  
+        
      }
 
   return (
@@ -34,7 +40,7 @@ const Adminlogin = () => {
             onSubmit={handlesubmit}
             >
                {({ errors, touched }) => (
-              <Form className="w-[500px] h-[250px] border-2  flex flex-col justify-center items-center p-[30px] space-y-8">
+              <Form className="w-[500px] h-[250px] border-t  flex flex-col justify-center items-center p-[30px] space-y-8">
                 <div>
                  <Field type="text" name="email" placeholder="Email" className="w-[300px] h-[30px] border-b-2 border-gray-300 focus:outline-none focus:border-b-2 focus:border-gray-300 font-local2" />
                  {errors.email && touched.email? <div className='text-red-600 text-sm'>{errors.email}</div> : null}
@@ -48,7 +54,7 @@ const Adminlogin = () => {
                   )} 
             </Formik>
             <div className="w-[500px] h-[40px]  mt-[35px] flex justify-center items-center">
-                <h2>Don't have an account? <span className="text-yellow-900 underline underline-offset-2">Sign Up</span></h2>
+                <h2>Don't have an account? <span className="text-yellow-900 underline underline-offset-2"><Link to={"/admin/adminsignup"}>Sign Up</Link></span></h2>
             </div>
           </div>
           {/* img section  */}

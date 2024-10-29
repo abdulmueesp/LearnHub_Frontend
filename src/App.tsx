@@ -1,7 +1,7 @@
-import MainRouter from "./Router/MainRouter"
 
+import MainRouter from "./Router/MainRouter"
 function App() {
- 
+
 
   return (
     <>
