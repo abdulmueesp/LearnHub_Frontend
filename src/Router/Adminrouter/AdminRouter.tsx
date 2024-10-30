@@ -6,6 +6,7 @@ import Adminlogin from "../../Views/Admin/Pre_Login/Adminlogin"
 import ProtectedRoute from "./Protectedroute"
 import { useEffect, useState } from "react"
 import RedirectRoute from "./Redirectroute"
+import Category from "../../Views/Admin/Post_Login/Category/Category"
 
 
 const AdminRouter = () => {
@@ -22,21 +23,21 @@ const AdminRouter = () => {
 
   return (
      <> 
-
      <Routes>
         <Route element={<RedirectRoute isLogged={isLogged} />}>
       <Route path="adminsignup" element={<AdminSignup/>} />
       <Route path="adminlogin" element={<Adminlogin/>} />
       </Route>
 
-            <Route element={<ProtectedRoute isLogged={isLogged}/>}>
-                <Route path="/*" element={<Layout/>} >
-                    <Route path="sample" element={<Sample/>} />    
-                </Route>
-            </Route>
-
+      <Route element={<ProtectedRoute isLogged={isLogged}/>}>
+        <Route path="/*" element={<Layout/>} >
+         <Route path="sample" element={<Sample/>} />
+         <Route path="category" element={<Category/>} />
+        </Route>
+      </Route>
 
         <Route path="*"  element={<Navigate to='adminlogin' replace />}/>
+
      </Routes>
      
      </>

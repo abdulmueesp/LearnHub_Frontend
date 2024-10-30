@@ -1,14 +1,15 @@
-import React, { PropsWithChildren } from 'react'
+import React from 'react'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar/Sidebar'
+import { Outlet } from 'react-router-dom'
 
-const Layout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
+const Layout: React.FC = () => {
   return (
     <div>
       <Navbar />
       <div className='flex'>
         <Sidebar />
-        <div>{children}</div>
+        <div><Outlet/></div>
       </div>
     </div>
   )

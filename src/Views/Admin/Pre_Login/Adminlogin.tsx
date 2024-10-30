@@ -2,13 +2,12 @@
 import { Field, Form, Formik } from "formik"
 import Manstudy from "../../../assets/manstudy.jpg"
 import { Adminloginvalidation } from "../../../Validations/Adminsignupval";
-import { Link, Navigate, useNavigate,} from "react-router-dom";
+import { Link} from "react-router-dom";
 import { Login } from "../../../redux/pages/Adminslice";
-import { useAppDispatch, useAppselector } from "../../../redux/hooks";
+import { useAppDispatch} from "../../../redux/hooks";
 const Adminlogin = () => {
 
     const dispatch=useAppDispatch();
-    const navigate=useNavigate();
      
   interface AdminLoginValues {
     email: string;

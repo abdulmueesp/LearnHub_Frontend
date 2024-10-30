@@ -28,8 +28,6 @@ const Adminslice =createSlice({
      const response=await axiosInstance.post("/admin/signup",values)
           if(response.status===201){
             alert("success",response.data.message)
-            
-            
             }
         }catch (error: any) {
           if (error.response && error.response.status === 409) {
@@ -47,10 +45,7 @@ const Adminslice =createSlice({
             alert('success',response.data.message)
             localStorage.setItem('token',response.data.token)
             dispatch(setIsAuthenticated(true))
-            return true
-           }
-
-           
+           }      
       }catch(error:any){
              if (error.response) {
             if (error.response.status === 404) {

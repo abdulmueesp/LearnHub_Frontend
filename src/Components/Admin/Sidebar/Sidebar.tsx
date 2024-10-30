@@ -10,6 +10,7 @@ const Sidebar = () => {
   return (
     <div className="w-[70px] lg:w-[270px] h-[671px] border-x   py-[30px] flex flex-col items-center space-y-7 overflow-y-hidden ">
       <Sidenav
+        link="#"
         onclick={() => handlenavclick(1)}
         selected={select == 1}
         logo={
@@ -31,6 +32,7 @@ const Sidebar = () => {
         name={"Dashboard"}
       />
       <Sidenav
+      link="#"
         onclick={() => handlenavclick(2)}
         selected={select == 2}
         logo={
@@ -53,6 +55,7 @@ const Sidebar = () => {
       />
 
       <Sidenav
+      link="/admin/category"
         onclick={() => handlenavclick(3)}
         selected={select == 3}
         logo={
