@@ -2,8 +2,8 @@
 
 const Category = () => {
   return (
-    <div className="w-full h-[600px] bg-pink-700">
-      categorykjnjk.l
+    <div className="w-[500px] h-[200px] bg-red-700">
+      
     </div>
   )
 }
