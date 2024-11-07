@@ -42,9 +42,9 @@ const Adminslice =createSlice({
       try{
          const response=await axiosInstance.post("/admin/login",values)
            if(response.status===200){
-            alert('success',response.data.message)
             localStorage.setItem('token',response.data.token)
             dispatch(setIsAuthenticated(true))
+            window.location.href = "/admin/sample";
            }      
       }catch(error:any){
              if (error.response) {

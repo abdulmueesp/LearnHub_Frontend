@@ -7,6 +7,7 @@ import ProtectedRoute from "./Protectedroute"
 import { useEffect, useState } from "react"
 import RedirectRoute from "./Redirectroute"
 import Category from "../../Views/Admin/Post_Login/Category/Category"
+import Course from "../../Views/Admin/Post_Login/Course/Course"
 
 
 const AdminRouter = () => {
@@ -33,6 +34,7 @@ const AdminRouter = () => {
         <Route path="/*" element={<Layout/>} >
          <Route path="sample" element={<Sample/>} />
          <Route path="category" element={<Category/>} />
+         <Route path="course" element={<Course/>} />
         </Route>
       </Route>
 

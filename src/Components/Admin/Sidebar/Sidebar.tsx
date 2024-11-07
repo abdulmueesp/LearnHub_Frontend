@@ -32,7 +32,7 @@ const Sidebar = () => {
         name={"Dashboard"}
       />
       <Sidenav
-      link="#"
+      link="/admin/course"
         onclick={() => handlenavclick(2)}
         selected={select == 2}
         logo={
