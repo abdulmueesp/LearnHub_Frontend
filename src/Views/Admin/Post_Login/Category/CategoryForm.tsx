@@ -1,4 +1,4 @@
-import { Field, Form, Formik } from "formik"
+import { Field, Form, Formik, FormikHelpers } from "formik"
 import Button from "../../../../Components/common/Button/Button"
 import { useAppDispatch } from "../../../../redux/hooks"
 import { createcategory } from "../../../../redux/pages/Categoryslice";
@@ -6,8 +6,9 @@ import { createcategory } from "../../../../redux/pages/Categoryslice";
 const CategoryForm = () => {
  const dispatch=useAppDispatch();
    
-  const handlesubmit=(values:any)=>{
+  const handlesubmit=(values:any,{ resetForm }:FormikHelpers<any>)=>{
       dispatch(createcategory(values))  
+      resetForm();
   }
   
   return (

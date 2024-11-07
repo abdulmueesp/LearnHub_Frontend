@@ -47,6 +47,13 @@ const Categoryslice=createSlice({
     }
    }
 
+   export const deletecategory=(id:any):AppThunk=>async(dispatch)=>{
+           const response=await axiosInstance.delete(`admin/categorydlt?id=${id}`)
+           if(response.status===201){
+            alert('success',response.data.message)
+            dispatch(setCategoryList(response.data.data))
+           }
+   }
 
 
 
