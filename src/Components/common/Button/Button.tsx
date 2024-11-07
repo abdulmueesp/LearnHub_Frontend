@@ -1,10 +1,20 @@
-import React from 'react'
+import React from "react"
 
-const Button = () => {
+type Buttonprops={
+    children:React.ReactNode;
+    classname:string;
+    onclick?:()=>void;
+    Type?:"submit"|"button"
+}
+const Button:React.FC<Buttonprops> = ({children,classname,onclick,Type}) => {
   return (
-    <div>
-      button
-    </div>
+    <button
+    className={classname}
+    onClick={onclick}
+    type={Type}
+    >
+     {children}
+    </button>
   )
 }
 

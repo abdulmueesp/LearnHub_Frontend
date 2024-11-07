@@ -1,14 +1,13 @@
 import CategoryForm from "./CategoryForm"
+import Table from "./Table"
 
 
 const Category = () => {
   return (
-    <div className="w-[1250px] h-[650px]  flex flex-col items-center p-[30px] space-y-12 "style={{backgroundColor:"rgba(244,247,254,255)"}}>
+      <div className="w-min lg:w-[800px] llg:w-[900px] xl:w-[1050px] xxl:w-[1100px] 1xl:w-[1200px] 2xl:w-[1270px] h-[600px] flex flex-col items-center pt-[60px] space-y-9  " >
      <CategoryForm/>
-     {/* <div className="w-[900px] h-[750px] border-2">
-
-      </div> */}
-    </div>
+     <Table/>
+      </div>
   )
 }
 

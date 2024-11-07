@@ -8,7 +8,7 @@ const Sidebar = () => {
     Setselect(index);
   };
   return (
-    <div className="w-[70px] lg:w-[270px] h-[671px] border-x   py-[30px] flex flex-col items-center space-y-7 overflow-y-hidden ">
+    <div className="w-[70px] lg:w-[270px] h-[671px] border-x   py-[30px] flex flex-col items-center space-y-7 overflow-y-hidden "style={{backgroundColor:"rgba(244,247,254,255)"}}>
       <Sidenav
         link="#"
         onclick={() => handlenavclick(1)}
