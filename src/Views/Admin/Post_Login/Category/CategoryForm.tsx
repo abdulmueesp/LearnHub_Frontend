@@ -4,7 +4,7 @@ import { useAppDispatch } from "../../../../redux/hooks"
 import { createcategory } from "../../../../redux/pages/Categoryslice";
 
 const CategoryForm = () => {
- const dispatch=useAppDispatch();
+  const dispatch=useAppDispatch();
    
   const handlesubmit=(values:any,{ resetForm }:FormikHelpers<any>)=>{
       dispatch(createcategory(values))  
@@ -12,7 +12,7 @@ const CategoryForm = () => {
   }
   
   return (
-    <div className="w-[350px] md:w-[650px] h-[55px] border-2 bg-white flex justify-center items-center md:space-x-10 shadow-md  ml-1 md:ml-6 lg:ml-0">
+    <div className="w-[350px] md:w-[650px] h-[55px]  bg-white flex justify-center items-center md:space-x-10 shadow-md  ml-1 md:ml-6 lg:ml-0">
       <Formik
       initialValues={{categoryname:""}}
       onSubmit={handlesubmit}
@@ -24,7 +24,7 @@ const CategoryForm = () => {
         placeholder="Enter Category"
         required
         />
-        <Button Type="submit" classname="w-[100px] h-[35px] border-2 bg-black text-white rounded-2xl font-local2">Add</Button>
+        <Button Type="submit" classname="w-[80px] h-[35px]  bg-black text-white font-local2 ml-3">Add</Button>
         </Form>        
       </Formik>
      

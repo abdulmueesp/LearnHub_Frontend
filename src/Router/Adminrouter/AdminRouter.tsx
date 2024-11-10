@@ -8,6 +8,7 @@ import { useEffect, useState } from "react"
 import RedirectRoute from "./Redirectroute"
 import Category from "../../Views/Admin/Post_Login/Category/Category"
 import Course from "../../Views/Admin/Post_Login/Course/Course"
+import Courseform from "../../Views/Admin/Post_Login/Course/Courseform"
 
 
 const AdminRouter = () => {
@@ -35,6 +36,7 @@ const AdminRouter = () => {
          <Route path="sample" element={<Sample/>} />
          <Route path="category" element={<Category/>} />
          <Route path="course" element={<Course/>} />
+         <Route path="addcourse" element={<Courseform/>} />
         </Route>
       </Route>
 
