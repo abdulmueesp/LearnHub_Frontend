@@ -1,5 +1,5 @@
 import { Field, Form, Formik } from "formik";
-
+import { courseCreateValidation } from "../../../../Validations/Coursevalidations";
 const Courseform = () => {
 
     interface coursedata{
@@ -10,8 +10,8 @@ const Courseform = () => {
          thumbnail?:FileList;
          video?:FileList;
          category:string;
-         price:Number;
-         offerprice:Number;
+         price:number;
+         offerprice:number;
 
     }
 
@@ -26,12 +26,18 @@ const Courseform = () => {
       price:0,
       offerprice:0,
     }
-
+  const handlesubmit=()=>{
+    console.log("hi");
+    
+  }
   return (
     <div className="w-min lg:w-[800px] llg:w-[900px] xl:w-[1050px] xxl:w-[1100px] 1xl:w-[1200px] 2xl:w-[1270px] h-[600px] border-2 flex justify-center items-center">
       <Formik
       initialValues={initialValues}
+      validationSchema={courseCreateValidation}
+      onSubmit={handlesubmit}
       >
+        {({ errors, touched }) => (
         <Form>
           <div className="w-[1100px] h-[500px] border  flex items-center justify-center">
             <div className="w-[45%] h-[500px] border border-black flex flex-col items-center pt-[20px] space-y-2 ">
@@ -39,6 +45,7 @@ const Courseform = () => {
               <div className="w-min h-[90px]   ">
                 <h2>Course name</h2>
                 <Field name="name" className="w-[350px] h-[40px] border border-gray-500" />
+                {errors.name && touched.name? <div className='text-red-600 text-sm'>{errors.name}</div> : null}
               </div>
 
               <div className="w-min h-[120px]   ">
@@ -48,6 +55,7 @@ const Courseform = () => {
                   className="w-[350px] h-[60px] border border-gray-500"
                   as="textarea"
                 />
+                {errors.discription && touched.discription? <div className='text-red-600 text-sm'>{errors.discription}</div> : null}
               </div>
 
               <div className="w-min h-[90px] ">
@@ -61,6 +69,7 @@ const Courseform = () => {
                   <option value="Malayalam">Malayalam</option>
                   <option value="Tamil">Tamil</option>
                 </Field>
+                {errors.language && touched.language? <div className='text-red-600 text-sm'>{errors.language}</div> : null}
               </div>
 
               <div className="w-min h-[90px]  ">
@@ -71,6 +80,7 @@ const Courseform = () => {
                   type="file"
                   accept="application/pdf"
                 />
+              {errors.document && touched.document? <div className='text-red-600 text-sm'>{errors.document}</div> : null}
               </div>
 
               <div className="w-min h-[90px] ">
@@ -80,6 +90,7 @@ const Courseform = () => {
                   className="w-[350px] h-[30px] border border-gray-500"
                   type="file"
                 />
+                {errors.thumbnail && touched.thumbnail? <div className='text-red-600 text-sm'>{errors.thumbnail}</div> : null}
               </div>
 
             </div>
@@ -93,6 +104,7 @@ const Courseform = () => {
                   className="w-[350px] h-[30px] border border-gray-500"
                   type="file"
                 />
+                {errors.video && touched.video? <div className='text-red-600 text-sm'>{errors.video}</div> : null}
               </div>
 
               <div className="w-min h-[90px] ">
@@ -106,22 +118,26 @@ const Courseform = () => {
                   <option value="Malayalam">Malayalam</option>
                   <option value="Tamil">Tamil</option>
                 </Field>
+                {errors.category && touched.category? <div className='text-red-600 text-sm'>{errors.category}</div> : null}
               </div>
 
               <div className="w-min h-[90px]   ">
                 <h2>price</h2>
                 <Field className="w-[350px] h-[40px] border border-gray-500" name="price" />
+                {errors.price && touched.price? <div className='text-red-600 text-sm'>{errors.price}</div> : null}
               </div>
 
               <div className="w-min h-[90px]   ">
                 <h2>offer price</h2>
                 <Field className="w-[350px] h-[40px] border border-gray-500" name="offerprice" />
+                {errors.offerprice && touched.offerprice? <div className='text-red-600 text-sm'>{errors.offerprice}</div> : null}
               </div>
 
-              <button>submit</button>
+              <button type="submit">submit</button>
             </div>
           </div>
         </Form>
+         )} 
       </Formik>
     </div>
   );
