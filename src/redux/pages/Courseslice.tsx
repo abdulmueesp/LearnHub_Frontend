@@ -33,6 +33,12 @@ const Courseslice=createSlice({
     }
 })
 
-export const courseadd=(values:any):AppThunk=>async()=>{
-    const response=await axiosInstance.post("")
+export const courseadd=(data:any):AppThunk=>async()=>{
+    const response=await axiosInstance.post("admin/courseadd",data,{
+        
+        headers:{
+            "Content-Type":"multipart/form-data",
+        },
+    })
+
 }

@@ -1,7 +1,10 @@
 import { Field, Form, Formik } from "formik";
 import { courseCreateValidation } from "../../../../Validations/Coursevalidations";
 import axiosInstance from "../../../../redux/interceptors/axiosconfig";
+import { useAppDispatch } from "../../../../redux/hooks";
+import { courseadd } from "../../../../redux/pages/Courseslice";
 const Courseform = () => {
+  const dispatch=useAppDispatch();
 
     interface coursedata{
          name:string;
@@ -13,7 +16,6 @@ const Courseform = () => {
          category:string;
          price:number;
          offerprice:number;
-
     }
 
     const initialValues:coursedata={
@@ -29,6 +31,8 @@ const Courseform = () => {
     }
 
   const handlesubmit= async(values:any)=>{
+    console.log(values);
+    
         const formdata=new FormData();
 
         formdata.append("name",values.name)
@@ -40,7 +44,8 @@ const Courseform = () => {
         formdata.append("category",values.category)
         formdata.append("price",values.price)
         formdata.append("offerprice",values.offerprice)
-
+           
+         dispatch(courseadd(formdata))
   }
   return (
     <div className="w-min lg:w-[800px] llg:w-[900px] xl:w-[1050px] xxl:w-[1100px] 1xl:w-[1200px] 2xl:w-[1270px] h-[600px] border-2 flex justify-center items-center">
